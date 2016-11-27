@@ -1,0 +1,66 @@
+.sub-menu {
+  position: fixed;
+  top: 45%;
+  width: 250px;
+  //display: none;
+  z-index: 1000;
+}
+
+.sub-menu span.sm-elmt{
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px 5px 10px 50px;
+  cursor: pointer;
+  line-height: 1rem;
+  justify-content: left;
+  font-weight: bold;
+}
+.sub-menu span.sm-pills{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height:16px;
+  width: 16px;
+  border: 1px solid #9a9a9a;
+  border-radius: 50%;
+  left: 20px;
+  box-sizing: border-box;
+}
+
+.sub-menu span.sm-pills::after{
+  content:'';
+  position: absolute;
+  height:16px;
+  width: 16px;
+  border: 1px solid #9a9a9a;
+  border-radius: 50%;
+  left: -1px;
+  top: -1px;
+  box-sizing: border-box;
+}
+
+.sub-menu span.nav-pills{
+  position: absolute;
+  height:15px;
+  width: 15px;
+  border-radius: 50%;
+  left: 20px;
+}
+
+.sub-active span.sm-pills,
+.sub-active span.sm-pills::after{
+  background-color: #f26522;
+  border-color: #f26522 !important;
+}
+.sub-menu span.pills-active {
+  background-color: #f26522;
+  border-color: #f26522 !important;
+}
+.sub-menu span.radar::after {
+  border-width: 2px;
+  background-color: transparent !important;
+  animation-duration: 1s;
+  animation-name: radar;
+}
