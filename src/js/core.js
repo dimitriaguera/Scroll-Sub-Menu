@@ -7,9 +7,9 @@
     lineActive : 'middle',
     deltaSectionEnd: 'middle',
     subSelector: 'ssm-section',
-    defaultAnimWhileClass: 'ssm-radar',
-    defaultAnimWhileDelay: 100,
-    defaultAnimWhileEnd: 1000,
+    animWhileClass: 'ssm-radar',
+    animWhileDelay: 100,
+    animWhileEnd: 1000,
     activeClass: 'ssm-sub-active',
     pillsActiveClass: 'ssm-pills-active',
     wrapperAttrs: {class: 'ssm-sub-menu'},
@@ -34,8 +34,8 @@
     noResult: {basic:'Wrong ID, no jQuery object match.'},
     settings: {
       basic:'Unrecognized settings expression or wrong value.',
-      defaultAnimWhileDelay: 'defaultAnimWhileDelay must be type Number.',
-      defaultAnimWhileEnd: 'defaultAnimWhileEnd must be type Number.',
+      animWhileDelay: 'animWhileDelay must be type Number.',
+      animWhileEnd: 'animWhileEnd must be type Number.',
       menuTarget : 'menuTarget must be type String matching element ID or jQuery Object.',
       lineActive : 'lineActive must be type Number or String value top|middle|bottom.',
       deltaSectionEnd: 'deltaSectionEnd must be type Number or String value top|middle|bottom.',
@@ -708,16 +708,16 @@
     pills = this.menu.navPills;
     nav = this.navigation[n];
     next = nav.menuElmt;
-    delay = self.settings.defaultAnimWhileDelay;
-    end = self.settings.defaultAnimWhileEnd;
+    delay = self.settings.animWhileDelay;
+    end = self.settings.animWhileEnd;
 
     if ( typeof delay !== 'number' ) {
-      error( 'settings', 'defaultAnimWhileDelay' );
-      delay = defaults.defaultAnimWhileDelay;
+      error( 'settings', 'animWhileDelay' );
+      delay = defaults.animWhileDelay;
     }
     if ( typeof end !== 'number' ) {
-      error( 'settings', 'defaultAnimWhileEnd' );
-      end = defaults.defaultAnimWhileEnd;
+      error( 'settings', 'animWhileEnd' );
+      end = defaults.animWhileEnd;
     }
 
     nav.menuElmt.menuElmt.removeClass( self.settings.activeClass );
@@ -725,8 +725,8 @@
     top = next.top + Math.round( (next.height / 2) ) - Math.round( (pills.height / 2) );
     pills.navPills.addClass( self.settings.pillsActiveClass ).animate({top: top}, delay, function(){
       if (nav === self.navigation[self.state.active]) { nav.menuElmt.menuElmt.addClass( self.settings.activeClass ); }
-      nav.menuElmt.pills.addClass(self.settings.defaultAnimWhileClass).delay( end ).queue(function(){
-        $(this).removeClass(self.settings.defaultAnimWhileClass).clearQueue();
+      nav.menuElmt.pills.addClass(self.settings.animWhileClass).delay( end ).queue(function(){
+        $(this).removeClass(self.settings.animWhileClass).clearQueue();
       });
       pills.navPills.removeClass( self.settings.pillsActiveClass );
     });
