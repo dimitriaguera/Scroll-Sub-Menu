@@ -47,6 +47,7 @@ gulp.task('myjs', function() {
     .pipe($.babel())
     .pipe($.if(isProduction, $.concat('jquery.scroll-sub-menu.min.js')))
     .pipe($.if(isProduction, uglify))
+    .pipe($.if(!isProduction, $.concat('jquery.scroll-sub-menu.js')))
     .pipe($.if(!isProduction, $.sourcemaps.write()))
     .pipe($.size())
     .pipe(gulp.dest('dist'));
@@ -75,53 +76,19 @@ gulp.task('mycss', function() {
 });
 
 
-// Combine JavaScript into one file
-// In production, the file is minified
-gulp.task('gmap', function() {
-  var uglify = $.if(isProduction, $.uglify()
-    .on('error', function (e) {
-      console.log(e);
-    }));
-
-  return gulp.src('js/gmappara.js')
-    .pipe($.sourcemaps.init())
-    .pipe($.babel())
-    .pipe($.rename({suffix:'.min'}))
-    .pipe(uglify)
-    .pipe($.if(!isProduction, $.sourcemaps.write()))
-    .pipe(gulp.dest('../js'));
-});
-
-gulp.task('inject',['mycss', 'myjs'], function () {
-  var target = gulp.src('../partials/_master.twig');
-  // It's not necessary to read the files (will speed up things), we're only after their paths:
-
-  var sources;
-  if(isProduction) {
-    sources = gulp.src(['../js/prod.min.js','../css/style.min.css'], {read: false});
-  } else {
-    sources = ['!../css/style.min.css', '../css/!(theme).css','../css/theme.css'];
-    sources = sources.concat(PATHS.myjs);
-    sources = gulp.src(sources, {read: false});
-  }
-
-  return target.pipe($.inject(sources,{ignorePath:'/../', addPrefix:'/theme/my'}))
-    .pipe(gulp.dest('../partials/'));
-});
-
 // Remove js et css files
 gulp.task('clean', function(){
-  return gulp.src(['../js/*','../css/*'], {read: false})
+  return gulp.src(['dist/*'], {read: false})
     .pipe($.if(isProduction, $.clean({force: true})));
 });
 
 
 
 // Build the "dist" folder by running all of the above tasks
-gulp.task('build', ['clean',  'gmap', 'myjs', 'mycss']);
+gulp.task('build', ['clean', 'myjs', 'mycss']);
 
 
-gulp.task('default', ['gmap', 'myjs', 'mycss'], function() {
+gulp.task('default', ['myjs', 'mycss'], function() {
   gulp.watch(PATHS.mycss, ['mycss']);
   gulp.watch(PATHS.myjs, ['myjs']);
 });
