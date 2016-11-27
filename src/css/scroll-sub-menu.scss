@@ -2,14 +2,23 @@
 $orange: #f26522;
 $gris: #9a9a9a;
 
-.sub-menu {
+.ssm-sub-menu ul {
+  margin:0;
+  padding:0;
+}
+
+.ssm-sub-menu li{
+  list-style: none;
+}
+
+.ssm-sub-menu {
   position: fixed;
   top: 45%;
   width: 250px;
   z-index: 1000;
 }
 
-.sub-menu span.sm-elmt{
+.ssm-sub-menu span.ssm-elmt{
   position: relative;
   display: inline-block;
   width: 100%;
@@ -20,7 +29,7 @@ $gris: #9a9a9a;
   justify-content: left;
   font-weight: bold;
 }
-.sub-menu span.sm-pills{
+.ssm-sub-menu span.ssm-pills{
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -32,7 +41,7 @@ $gris: #9a9a9a;
   box-sizing: border-box;
 }
 
-.sub-menu span.sm-pills::after{
+.ssm-sub-menu span.ssm-pills::after{
   content:'';
   position: absolute;
   height:16px;
@@ -44,7 +53,7 @@ $gris: #9a9a9a;
   box-sizing: border-box;
 }
 
-.sub-menu span.nav-pills{
+.ssm-sub-menu span.ssm-nav-pills{
   position: absolute;
   height:15px;
   width: 15px;
@@ -52,18 +61,24 @@ $gris: #9a9a9a;
   left: 20px;
 }
 
-.sub-active span.sm-pills,
-.sub-active span.sm-pills::after{
+.ssm-sub-active span.ssm-pills,
+.ssm-sub-active span.ssm-pills::after{
   background-color: $orange;
   border-color: $orange !important;
 }
-.sub-menu span.pills-active {
+.ssm-sub-menu span.ssm-pills-active {
   background-color: $orange;
   border-color: $orange !important;
 }
-.sub-menu span.radar::after {
+.ssm-sub-menu span.ssm-radar::after {
   border-width: 2px;
   background-color: transparent !important;
   animation-duration: 1s;
   animation-name: radar;
 }
+
+.ssm-cn {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center; }

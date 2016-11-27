@@ -6,16 +6,16 @@
     menuTarget : null,
     lineActive : 'middle',
     deltaSectionEnd: 'middle',
-    subSelector: 'sub-menu-section',
-    defaultAnimWhileClass: 'radar',
+    subSelector: 'ssm-section',
+    defaultAnimWhileClass: 'ssm-radar',
     defaultAnimWhileDelay: 100,
     defaultAnimWhileEnd: 1000,
-    activeClass: 'sub-active',
-    pillsActiveClass: 'pills-active',
-    wrapperAttrs: {class: 'sub-menu'},
-    elementAttrs: {class: 'sm-elmt'},
-    pillsAttrs: {class: 'sm-pills cn'},
-    navPillsAttrs: {class: 'nav-pills'},
+    activeClass: 'ssm-sub-active',
+    pillsActiveClass: 'ssm-pills-active',
+    wrapperAttrs: {class: 'ssm-sub-menu'},
+    elementAttrs: {class: 'ssm-elmt'},
+    pillsAttrs: {class: 'ssm-pills ssm-cn'},
+    navPillsAttrs: {class: 'ssm-nav-pills'},
     wrapperCSS: {},
     elementCSS: {},
     pillsCSS: {},
@@ -226,7 +226,7 @@
       // Finaly call scrollhandler to initialize menu state.
       scrollHandler.call(self);
       // SubMenu has grown !
-      this.state.baby = false;
+      self.state.baby = false;
       // Finaly call callback function.
       if (typeof callback === 'function') {
         return callback.call(obj, self);
@@ -418,7 +418,7 @@
       var $this = $( this );
 
       // Searching sub menu section title.
-      title = $this.data('sub-menu-title');
+      title = $this.data('ssm-title');
       // Creation sub menu entries elements.
       item = htmlElementConstructor.call( self, title );
       ul.append( item.li );

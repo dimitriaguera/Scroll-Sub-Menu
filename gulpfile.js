@@ -21,6 +21,7 @@ var COMPATIBILITY = ['last 2 versions', 'ie >= 9'];
 // File paths to various assets are defined here.
 var PATHS = {
   mycss: [
+    'src/css/animation.scss',
     'src/css/scroll-sub-menu.scss'
   ],
   myjs: [
@@ -64,6 +65,7 @@ gulp.task('mycss', function() {
     .pipe($.cssbeautify({indent: '  '}))
     .pipe($.if(isProduction, $.concat('scroll-sub-menu.min.css')))
     .pipe($.if(isProduction, minifycss)) // Minify
+    .pipe($.if(!isProduction, $.concat('scroll-sub-menu.css')))
     .pipe($.if(!isProduction, $.sourcemaps.write()))
     .pipe($.size())
     .pipe(gulp.dest('dist'));
