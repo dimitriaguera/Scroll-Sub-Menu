@@ -139,7 +139,7 @@
    * @param {function} callback - function called at the end, when menu is created, injected in the DOM and initialized.
    * @returns {object} return jQuery object, or anonym object when getMenuItems is called.
      */
-  $.fn.subMenu = function( method, options, callback ) {
+  $.fn.ScrollSubMenu = function( method, options, callback ) {
 
     // If user gives a method, a callback, but no options.
     if (typeof options === "function") {
