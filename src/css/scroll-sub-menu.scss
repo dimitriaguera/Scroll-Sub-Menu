@@ -1,8 +1,11 @@
+
+$orange: #f26522;
+$gris: #9a9a9a;
+
 .sub-menu {
   position: fixed;
   top: 45%;
   width: 250px;
-  //display: none;
   z-index: 1000;
 }
 
@@ -23,7 +26,7 @@
   transform: translateY(-50%);
   height:16px;
   width: 16px;
-  border: 1px solid #9a9a9a;
+  border: 1px solid $gris;
   border-radius: 50%;
   left: 20px;
   box-sizing: border-box;
@@ -34,7 +37,7 @@
   position: absolute;
   height:16px;
   width: 16px;
-  border: 1px solid #9a9a9a;
+  border: 1px solid $gris;
   border-radius: 50%;
   left: -1px;
   top: -1px;
@@ -51,12 +54,12 @@
 
 .sub-active span.sm-pills,
 .sub-active span.sm-pills::after{
-  background-color: #f26522;
-  border-color: #f26522 !important;
+  background-color: $orange;
+  border-color: $orange !important;
 }
 .sub-menu span.pills-active {
-  background-color: #f26522;
-  border-color: #f26522 !important;
+  background-color: $orange;
+  border-color: $orange !important;
 }
 .sub-menu span.radar::after {
   border-width: 2px;

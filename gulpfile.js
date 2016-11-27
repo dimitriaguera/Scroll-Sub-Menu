@@ -20,14 +20,8 @@ var COMPATIBILITY = ['last 2 versions', 'ie >= 9'];
 
 // File paths to various assets are defined here.
 var PATHS = {
-  //assets: [
-  //  'src/assets/**/*',
-  //  '!src/assets/{img,js,scss}/**/*',
-  // 'src/assets/js/**/!(app).js',
-  // 'src/assets/js/app.js',
-  //],
   mycss: [
-    'src/css/scroll-sub-menu.scss',
+    'src/css/scroll-sub-menu.scss'
   ],
   myjs: [
     'src/js/core.js'
@@ -65,10 +59,10 @@ gulp.task('mycss', function() {
       .on('error', $.sass.logError))
     .pipe($.autoprefixer({
       browsers: COMPATIBILITY
-    })) // Rajoute les prefixe automatiquement
-    .pipe($.csscomb())  // Met les bonnes propriété dans l'ordre
-    .pipe($.cssbeautify({indent: '  '})) // Rend beau le css avec une indentation correcte
-    .pipe($.if(isProduction, $.concat('scroll-sub-menu.min.css')))// Concate
+    }))
+    .pipe($.csscomb())
+    .pipe($.cssbeautify({indent: '  '}))
+    .pipe($.if(isProduction, $.concat('scroll-sub-menu.min.css')))
     .pipe($.if(isProduction, minifycss)) // Minify
     .pipe($.if(!isProduction, $.sourcemaps.write()))
     .pipe($.size())
