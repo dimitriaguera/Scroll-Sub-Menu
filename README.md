@@ -8,6 +8,27 @@ Scroll-Sub-Menu is a jQuery plugin that creates contextual and animated sub-menu
 
 IE 9+, Chrome, Firefox, Safari, Opera.
 
+### Start
+
+```html
+		<div id="target">
+			<h1>Section 1</h1>
+			<div data-ssm-title="section1 sub-section1" class="sub-section ssm-section">
+			<h2>Section 1 - Sub-section 1</h2>
+			</div>
+			<div data-ssm-title="section1 sub-section2" class="sub-section ssm-section">
+			<h2>Section 1 - Sub-section 2</h2>
+			</div>
+			<div data-ssm-title="section1 sub-section3" class="sub-section ssm-section">
+			<h2>Section 1 - Sub-section 3</h2>
+			</div>
+		</div>
+```
+
+```javascript
+    $("#target").ScrollSubMenu();
+```
+
 ### Options
 
 Scroll-Sub-Menu has several properties, events, and methods to interact with the control programmatically.
