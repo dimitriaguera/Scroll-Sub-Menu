@@ -10,24 +10,34 @@ IE 9+, Chrome, Firefox, Safari, Opera.
 
 ### Start
 
+Let's create html element containing sub elements width "ssm-section" class.
+
 ```html
 		<div id="target">
 			<h1>Section 1</h1>
-			<div data-ssm-title="section1 sub-section1" class="sub-section ssm-section">
-			<h2>Section 1 - Sub-section 1</h2>
+			<div data-ssm-title="sub-menu title 1" class="ssm-section">
+			<h2>Section 1 - Sub section 1</h2>
 			</div>
-			<div data-ssm-title="section1 sub-section2" class="sub-section ssm-section">
+			<div data-ssm-title="sub-menu title 2" class="ssm-section">
 			<h2>Section 1 - Sub-section 2</h2>
 			</div>
-			<div data-ssm-title="section1 sub-section3" class="sub-section ssm-section">
+			<div data-ssm-title="sub-menu title 3" class="ssm-section">
 			<h2>Section 1 - Sub-section 3</h2>
 			</div>
 		</div>
 ```
 
+Just apply ScrollSubMenu on parent element.
+
 ```javascript
     $("#target").ScrollSubMenu();
 ```
+
+Contextual sub-menu of '#target' element is now created. This sub-menu contains entries pointing for all ".ssm-section"
+elements in '#target' element.
+This menu appears when the '#target' element enters the viewport screen.
+
+Options allows changing sub-sections target class, and several others things.
 
 ### Options
 
@@ -36,16 +46,18 @@ Scroll-Sub-Menu has several properties, events, and methods to interact with the
 ```javascript
 	$("#target").ScrollSubMenu({
 
-	        // Properties.
-		    menuTarget : null,
-            lineActive : 'middle',
+	        // Settings properties.
+		    menuTarget: null,
+            lineActive: 'middle',
             deltaSectionEnd: 'middle',
             subSelector: 'ssm-section',
-            animWhileClass: 'ssm-radar',
             animWhileDelay: 100,
             animWhileEnd: 1000,
+
+            // Theming properties.
             activeClass: 'ssm-sub-active',
             pillsActiveClass: 'ssm-pills-active',
+            animWhileClass: 'ssm-radar',
             wrapperAttrs: {class: 'ssm-sub-menu'},
             elementAttrs: {class: 'ssm-elmt'},
             pillsAttrs: {class: 'ssm-pills ssm-cn'},
