@@ -16,13 +16,13 @@ Let's create html element containing sub elements width "ssm-section" class, and
 		<div id="target">
 			<h1>Section 1</h1>
 			<div data-ssm-title="sub-section title 1" class="ssm-section">
-			<h2>Section 1 - Sub section 1</h2>
+			    <h2>Section 1 - Sub section 1</h2>
 			</div>
 			<div data-ssm-title="sub-section title 2" class="ssm-section">
-			<h2>Section 1 - Sub-section 2</h2>
+			    <h2>Section 1 - Sub-section 2</h2>
 			</div>
 			<div data-ssm-title="sub-section title 3" class="ssm-section">
-			<h2>Section 1 - Sub-section 3</h2>
+			    <h2>Section 1 - Sub-section 3</h2>
 			</div>
 		</div>
 ```
@@ -50,22 +50,22 @@ For example :
 		<div class="targets">
 			<h1>Section 1</h1>
 			<div data-ssm-title="sub-section 1 title 1" class="ssm-section">
-			<h2>Section 1 - Sub section 1</h2>
+			    <h2>Section 1 - Sub section 1</h2>
 			</div>
 			<div data-ssm-title="sub-section 1 title 2" class="ssm-section">
-			<h2>Section 1 - Sub-section 2</h2>
+			    <h2>Section 1 - Sub-section 2</h2>
 			</div>
 		</div>
 
 		<div class="targets">
    			<h1>Section 2</h1>
-        			<div data-ssm-title="sub-section 2 title 1" class="ssm-section">
-        			<h2>Section 2 - Sub section 1</h2>
-        			</div>
-        			<div data-ssm-title="sub-section 2 title 2" class="ssm-section">
-        			<h2>Section 2 - Sub-section 2</h2>
-        			</div>
-        		</div>
+        	<div data-ssm-title="sub-section 2 title 1" class="ssm-section">
+        	    <h2>Section 2 - Sub section 1</h2>
+        	</div>
+        	<div data-ssm-title="sub-section 2 title 2" class="ssm-section">
+        		<h2>Section 2 - Sub-section 2</h2>
+        	</div>
+        </div>
 ```
 
 You can create a sub menu for all ".targets" class elements, and then store different settings.
@@ -74,10 +74,12 @@ You can create a sub menu for all ".targets" class elements, and then store diff
 
         $(".targets").ScrollSubMenu();
 
+        // Store new settings on the first target element.
         $(".targets").eq(0).ScrollSubMenu({
             animWhileDelay: 200
         });
 
+        // Store different settings on the second target element.
         $(".targets").eq(1).ScrollSubMenu({
             animWhileDelay: 400
         });
