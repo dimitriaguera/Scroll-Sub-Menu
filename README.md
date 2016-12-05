@@ -9,7 +9,7 @@ Scroll-Sub-Menu is a jQuery plugin that creates contextual and animated sub-menu
 IE 9+, Chrome, Firefox, Safari, Opera.
 
 ### Manual installation
-**Note:** jquery.scroll-sub-menu.min.js have a dependency on jQuery 3.1+.
+**Note  :** *jquery.scroll-sub-menu.min.js* have a dependency on **jQuery 3.1+**.
 There currently are two ways to get Scroll-Sub-Menu.
 Download and use lastest files ```dist/jquery.scroll-sub-menu.min.js``` and ```dist/scroll-sub-menu.min.css```
 
@@ -24,8 +24,8 @@ Clone the following repository into your projects directory structure.
 git clone https://github.com/dimitriaguera/Scroll-Sub-Menu.git
 ```
 
-For developers, environment installtion : point on `src/` folder, and run a `npm install`.
-Now, you can use those Gulp task-runner scripts:
+Environment installation for developers. Point on `src/` folder, and run a `npm install`.
+Now, you can use **Gulp task-runner scripts**:
 - `gulp` - watch js, scss files on `src/` folder. Compile and write on *scroll-sub-menu.css* and *jquery-scroll-sub-menu.js*.
 - `gulp build` - Clean `dist/` folder, concat, compile and write on *scroll-sub-menu.css* and *jquery-scroll-sub-menu.js* in `dist/` folder.
 - `gulp build --production`  - Clean `dist/` folder, concat, compile, minify, uglify and write on *scroll-sub-menu.min.css* and *jquery-scroll-sub-menu.min.js* in `dist/` folder.
@@ -49,7 +49,7 @@ Let's create html element containing sub elements width "ssm-section" class, and
 		</div>
 ```
 
-Just apply ScrollSubMenu on parent element.
+Just apply ScrollSubMenu on target jQuery element.
 
 ```javascript
     $("#target").ScrollSubMenu();
@@ -70,7 +70,10 @@ ScrollSubMenu allows multi-target.
 
 ### Statefull plugin
 
-ScrollSubMenu is a statefull plugin that creates SubMenu instances for each element.
+ScrollSubMenu is a statefull plugin that creates **SubMenu** instances for each element.
+
+SubMenu instance object is stored on `data.subMenuPlugin.subMenuInstance` property of the jQuery target element.
+
 For example :
 
 ```html
