@@ -11,10 +11,10 @@ IE 9+, Chrome, Firefox, Safari, Opera.
 ### Manual installation
 **Note:** jquery.scroll-sub-menu.min.js have a dependency on jQuery 3.1+.
 There currently are two ways to get Scroll-Sub-Menu.
-Download lastest files ```dist/jquery.scroll-sub-menu.min.js``` and ```dist/scroll-sub-menu.min.css```
+Download and use lastest files ```dist/jquery.scroll-sub-menu.min.js``` and ```dist/scroll-sub-menu.min.css```
 
 ```
-https://github.com/dimitriaguera/Scroll-Sub-Menu
+https://github.com/dimitriaguera/Scroll-Sub-Menu/archive/master.zip
 ```
 
 ### GitHub
@@ -142,9 +142,7 @@ Scroll-Sub-Menu has several properties, events, and methods to interact with the
 	});
 ```
 
-### Options details
-
-####Settings properties
+### Settings properties
 
 **menuTarget** - *(type : jQuery Object | string)*
 
@@ -194,7 +192,7 @@ Default value: `1000`
 
 ---------------------------
 
-####Theming properties
+### Theming properties
 
 Default sub-menu html structure :
 - `<div>` [wrapper]
@@ -204,64 +202,118 @@ Default sub-menu html structure :
 			- `<span>` [element] - contain sub-title
 				- `<span>` [pills] - decorative element.
 
+----------------------
 
-**activeClass** - (type : String)
-	Class adds to active [element] in sub-menu.
-	Default value: `ssm-sub-active`
-	
-**pillsActiveClass** - (type : String)
-	Class adds to active [pills] in sub-menu.
-	Default value: `ssm-pills-active`
-	
-**animWhileClass** - (type : String)
-	Animation Class adds to active [pills] in sub-menu.
-	Default value: `ssm-radar`
-	
-**wrapperAttrs** - (type : Object)
-	Attributes add to sub-menu [wrapper].
-	Default value: `{class: 'ssm-sub-menu'}`
-	
-**elementAttrs** - (type : Object)
-	Attributes add to sub-menu [element].
-	Default value: `{class: 'ssm-elmt'}`
-	
-**pillsAttrs** - (type : Object)
-	Attributes add to sub-menu [pills].
-	Default value: `{class: 'ssm-pills ssm-cn'}`
-	
-**navPillsAttrs** - (type : Object)
-	Attributes add to sub-menu's moving element [nav-pills].
-	Default value: `{class: 'ssm-nav-pills'}`
+**activeClass** - *(type : String)*
+
+Class adds to active [element] in sub-menu.
+
+Default value: `ssm-sub-active`
 
 --------------------------
 
-#### Events
+**pillsActiveClass** - *(type : String)*
+
+Class adds to active [pills] in sub-menu.
+
+Default value: `ssm-pills-active`
+
+--------------------------
+
+**animWhileClass** - *(type : String)*
+
+Animation Class adds to active [pills] in sub-menu.
+
+Default value: `ssm-radar`
+
+--------------------------
+
+**wrapperAttrs** - *(type : Object)*
+
+Attributes add to sub-menu [wrapper].
+
+Default value: `{class: 'ssm-sub-menu'}`
+
+--------------------------
+
+**elementAttrs** - *(type : Object)*
+
+Attributes add to sub-menu [element].
+
+Default value: `{class: 'ssm-elmt'}`
+
+--------------------------
+
+**pillsAttrs** - *(type : Object)*
+
+Attributes add to sub-menu [pills].
+
+Default value: `{class: 'ssm-pills ssm-cn'}`
+
+--------------------------
+
+**navPillsAttrs** - *(type : Object)*
+
+Attributes add to sub-menu's moving element [nav-pills].
+
+Default value: `{class: 'ssm-nav-pills'}`
+
+--------------------------
+
+### Events
 
 `null` value automatically calls defaults animFn.
+All those functions are called with `this` pointing the instance of **SubMenu** object.
 
-**animExitFn** - (type : Function)
-	Function called when Exit Event is triggered.
-	Default value : `null` -> `defaultAnimExit` is called.
-	
-**animEnterFn** - (type : Function)
-	Function called when Enter Event is triggered.
-	Default value : `null` -> `defaultAnimEnter` is called.
-	
-**animWhileFn** - (type : Function)
-	Function called when sub-menu active element change.
-	Default value: `null` -> `defaultAnimWhile` is called.
-	
-**clickHandlerFn** - (type : Function)
-	Function registered has listner for click event on sub-menu [element].
-	Default value: `null` -> `defaultClickHandler` is called.
-	
-**elementCreateCallback** - (type : Function)
-	Function called rigth before the sub-menu is injected in the DOM.
-	Default value: `null` -> none
-	
-**scrollStepCallback** - (type : Function)
-	Function called on each scroll event.
-	Default value: `null` -> none
+**animExitFn** - *(type : Function)*
+
+Function called when Exit Event is triggered.
+
+Default value : `null` -> `defaultAnimExit` is called.
+
+--------------------------
+
+**animEnterFn** - *(type : Function)*
+
+Function called when Enter Event is triggered.
+
+Default value : `null` -> `defaultAnimEnter` is called.
+
+--------------------------
+
+**animWhileFn** - *(type : Function)*
+
+Function called when sub-menu active element change.
+
+Called with arguments : *index* (type : Number) - Index of the sub-section active.
+
+Default value: `null` -> `defaultAnimWhile` is called.
+
+--------------------------
+
+**clickHandlerFn** - *(type : Function)*
+
+Function handler triggered when click event occurs on sub-menu [element].
+
+Called with arguments : *event* (type : Object) / *position* (type : Object).
+
+Default value: `null` -> `defaultClickHandler` is called.
+
+--------------------------
+
+**elementCreateCallback** - *(type : Function)*
+
+Function called rigth before the sub-menu is injected in the DOM.
+
+Default value: `null` -> none
+
+--------------------------
+
+**scrollStepCallback** - *(type : Function)*
+
+Function called on each scroll event.
+
+Default value: `null` -> none
 
 
 ### Licence
