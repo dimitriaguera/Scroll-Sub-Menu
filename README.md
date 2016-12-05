@@ -24,6 +24,12 @@ Clone the following repository into your projects directory structure.
 git clone https://github.com/dimitriaguera/Scroll-Sub-Menu.git
 ```
 
+For developers, environment installtion : point on `src/` folder, and run a `npm install`.
+Now, you can use those Gulp task-runner scripts:
+- `gulp` - watch js, scss files on `src/` folder. Compile and write on *scroll-sub-menu.css* and *jquery-scroll-sub-menu.js*.
+- `gulp build` - Clean `dist/` folder, concat, compile and write on *scroll-sub-menu.css* and *jquery-scroll-sub-menu.js* in `dist/` folder.
+- `gulp build --production`  - Clean `dist/` folder, concat, compile, minify, uglify and write on *scroll-sub-menu.min.css* and *jquery-scroll-sub-menu.min.js* in `dist/` folder.
+
 ### Start
 
 Let's create html element containing sub elements width "ssm-section" class, and a "data-ssm-title" attribute.
