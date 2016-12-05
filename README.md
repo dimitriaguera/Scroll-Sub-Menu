@@ -151,31 +151,41 @@ Scroll-Sub-Menu has several properties, events, and methods to interact with the
 Element in which the sub-menu is inserted.
 
 Default value: `null` (if `null`, sub-menu is inserted in jQuery element which is applied `.ScrollSubMenu()` method.)
+
 ----------------------
+
 **lineActive** - *(type : String [top|middle|bottom] | Number)*
 
 Define from top viewport line position that trigger sub-section change, and the sub-menu animEnterFn.
 
 Default value: `middle`
+
 ----------------------
+
 **deltaSectionEnd** - *(type : String [top|middle|bottom] | Number)*
 
 Define from bottom viewport line position that trigger the sub-menu animExitFn.
 
 Default value: `middle`
+
 ---------------------
+
 **subSelector** - *(type : String)*
 
 Class name for sub-section target. This class is used for build sub-menu.
 
 Default value: `ssm-section`
+
 ----------------------
+
 **animWhileDelay** - *(type : Number)*
 
 Time for default animWhileFn animation that move pill on sub-menu.
 
 Default value: `100`
+
 ----------------------
+
 **animWhileEnd** - *(type : Number)*
 
 Time for default animation that show / hide sub-menu.
