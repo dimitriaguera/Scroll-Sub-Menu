@@ -1,7 +1,7 @@
 {
   "name": "scroll-sub-menu",
   "version": "1.0.0",
-  "description": "Make and inject contextual sub-menu to section.",
+  "description": "Make and inject contextual sub-menu to targeted jQuery element.",
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp",
@@ -18,8 +18,8 @@
   ],
   "author": {
     "name": "Dimitri Aguera",
-    "email": "dimitri.aguera@gmail.com",
-    "web": ""
+    "email": "dimitri.aguera@ginkgo-web.fr",
+    "web": "www.ginkgo-web.fr"
 },
   "license": "MIT",
   "private": false,
