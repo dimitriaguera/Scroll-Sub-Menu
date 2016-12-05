@@ -8,12 +8,9 @@ Scroll-Sub-Menu is a jQuery plugin that creates contextual and animated sub-menu
 
 IE 9+, Chrome, Firefox, Safari, Opera.
 
-Installation
----------------------------
+### Manual installation
 **Note:** jquery.scroll-sub-menu.min.js have a dependency on jQuery 3.1+.
 There currently are two ways to get Scroll-Sub-Menu.
-
-### Manual
 Download lastest files ```dist/jquery.scroll-sub-menu.min.js``` and ```dist/scroll-sub-menu.min.css```
 
 ```
@@ -27,8 +24,7 @@ Clone the following repository into your projects directory structure.
 git clone https://github.com/dimitriaguera/Scroll-Sub-Menu.git
 ```
 
-Start
----------------------------
+### Start
 
 Let's create html element containing sub elements width "ssm-section" class, and a "data-ssm-title" attribute.
 
@@ -58,11 +54,16 @@ This sub-menu contains entries pointing for all ".ssm-section"
 elements in '#target' element. Each entry title comes from "data-ssm-title" attribute.
 This menu appears when the '#target' element enters the viewport screen.
 
+### Multi-targeting
+
 ScrollSubMenu allows multi-target.
 
 ```javascript
     $(".targets").ScrollSubMenu();
 ```
+
+### Statefull plugin
+
 ScrollSubMenu is a statefull plugin that creates SubMenu instances for each element.
 For example :
 
@@ -104,9 +105,6 @@ Create a sub menu for all ".targets" class elements, and then store different se
             animWhileDelay: 400
         });
 ```
-
-Options and settings
----------------------------
 
 Options allows changing sub-sections target class, and several others things.
 
@@ -175,12 +173,12 @@ Scroll-Sub-Menu has several properties, events, and methods to interact with the
 ####Theming properties.
 
 Default sub-menu html structure :
-`<div>` [wrapper]
-	`<span>` [nav-pills] - moving element
-	`<ul>`
-		`<li>`
-			`<span>` [element] - contain sub-title
-				`<span>` [pills] - decorative element.
+- `<div>` [wrapper]
+	- `<span>` [nav-pills] - moving element
+	- `<ul>`
+		- `<li>`
+			- `<span>` [element] - contain sub-title
+				- `<span>` [pills] - decorative element.
 
 
 - **activeClass** (type String)
