@@ -9,7 +9,9 @@ Scroll-Sub-Menu is a jQuery plugin that creates contextual and animated sub-menu
 IE 9+, Chrome, Firefox, Safari, Opera.
 
 ### Manual installation
-**Note  :** *jquery.scroll-sub-menu.min.js* have a dependency on **jQuery 3.1+**.
+
+**Note  :** *jquery.scroll-sub-menu.min.js* have a dependency on **jQuery 2.2+**.
+
 There currently are two ways to get Scroll-Sub-Menu.
 Download and use lastest files ```dist/jquery.scroll-sub-menu.min.js``` and ```dist/scroll-sub-menu.min.css```
 
@@ -18,6 +20,7 @@ https://github.com/dimitriaguera/Scroll-Sub-Menu/archive/master.zip
 ```
 
 ### GitHub
+
 Clone the following repository into your projects directory structure.
 
 ```
@@ -111,7 +114,28 @@ Create a sub menu for all ".targets" class elements, and then store different se
 
         // Store different settings on the second target element.
         $(".targets").eq(1).ScrollSubMenu({
-            animWhileDelay: 400
+			animEnterFn: function(){
+				this.menu.wrapper.css({display:'block'}).find('li').each(function(i){
+					var el = $(this).css({marginLeft:'-100%', opacity:0});
+					setTimeout(function() {
+						el.animate({
+							marginLeft: '0',
+							opacity:1
+						}, 100);
+					}, i * 100);
+				});
+			},
+			animExitFn: function(){
+				this.menu.wrapper.find('li').each(function(i){
+					var el = $(this);
+					setTimeout(function() {
+						el.animate({
+							marginLeft: '-100%',
+							opacity:0
+						}, 100);
+					}, i * 100);
+				});
+			}
         });
 ```
 
