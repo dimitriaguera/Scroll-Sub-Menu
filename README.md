@@ -110,7 +110,7 @@ Create a sub menu for all ".targets" class elements, and then store different se
         // Store new settings on the first target element.
         $(".targets").eq(0).ScrollSubMenu({
             animWhileDelay: 200,
-            speedScroll: 200,
+            scrollSpeed: 400,
         });
 
         // Store different settings on the second target element.
@@ -156,6 +156,8 @@ Scroll-Sub-Menu has several properties, events, and methods to interact with the
             subSelector: 'ssm-section',
             animWhileDelay: 100,
             animWhileEnd: 1000,
+            scrollSpeed: 200,
+            scrollEasing: 'swing',
 
             // Theming properties.
             activeClass: 'ssm-sub-active',
