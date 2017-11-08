@@ -109,7 +109,8 @@ Create a sub menu for all ".targets" class elements, and then store different se
 
         // Store new settings on the first target element.
         $(".targets").eq(0).ScrollSubMenu({
-            animWhileDelay: 200
+            animWhileDelay: 200,
+            speedScroll: 200,
         });
 
         // Store different settings on the second target element.
@@ -206,6 +207,24 @@ Default value: `middle`
 Class name for sub-section target. This class is used for build sub-menu.
 
 Default value: `ssm-section`
+
+---------------------
+
+**scrollSpeed** - *(type : Integer)*
+
+An integer for speed scrolling animation in millisecond.
+If set to 0 no scroll animation.
+
+Default value: 200
+
+----------------------
+
+**scrollEasing** - *(type : String)*
+
+Easing for scrolling animation. Must be jQuery (UI ?) easing string.
+No impact if scrollSpeed setting is set to 0.
+
+Default value: 'swing'
 
 ----------------------
 

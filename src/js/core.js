@@ -25,7 +25,9 @@
     animWhileFn: null,
     clickHandlerFn: null,
     elementCreateCallback: null,
-    scrollStepCallback: null
+    scrollStepCallback: null,
+    scrollSpeed: 200,
+    scrollEasing: 'swing',
   };
 
   // Errors messages.
@@ -52,7 +54,7 @@
     animExitFn: defaultAnimExit,
     animEnterFn: defaultAnimEnter,
     animWhileFn: defaultAnimWhileCallback,
-    clickHandlerFn: defaultClickHandler
+    clickHandlerFn: defaultSmoothClickHandler,
   };
 
   // We defines public methods here.
@@ -678,7 +680,32 @@
      */
   function defaultClickHandler( e, item ) {
     $( window ).scrollTop( item.start );
+      e.preventDefault();
   }
+
+    /**
+     * Default smooth scroll click handler.
+     *
+     * @param {object} e - Event object.
+     * @param {object} item - set of values returning by 'elementPosition' func.
+     * @param {integer} speed - scroll anomation speed, ms.
+     *
+     */
+    function defaultSmoothClickHandler( e, item ) {
+
+       var time = this.settings.scrollSpeed;
+       var ease = this.settings.scrollEasing;
+
+       if ( !time ) {
+         return defaultClickHandler(e, item);
+       }
+
+        $('html, body').animate({
+            scrollTop: item.start
+        }, time, ease);
+
+       e.preventDefault();
+    }
 
   /**
    * Default hidding anim handler.

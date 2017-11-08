@@ -7,7 +7,7 @@
     "start": "gulp",
     "build": "gulp build --production"
   },
-    "keywords": [
+  "keywords": [
     "ecosystem:jquery",
     "jquery-plugin",
     "menu",
@@ -20,7 +20,7 @@
     "name": "Dimitri Aguera",
     "email": "dimitri.aguera@ginkgo-web.fr",
     "web": "www.ginkgo-web.fr"
-},
+  },
   "license": "MIT",
   "private": false,
   "engineStrict": true,
