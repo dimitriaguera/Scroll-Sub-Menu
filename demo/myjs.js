@@ -18,13 +18,22 @@
     },
     
     animExitFn: function(){
-      this.menu.wrapper.find('li').each(function(i){
+
+      var $wrapper = this.menu.wrapper;
+      var $list = this.menu.wrapper.find('li');
+
+        $list.each(function(i){
         var el = $(this);
         setTimeout(function() {
           el.animate({
               marginLeft: '-100%',
               opacity:0
           }, 100);
+
+          if ( i === $list.length - 1 ) {
+              $wrapper.css({display:'none'});
+          }
+
         }, i * 100);
       });
     }
